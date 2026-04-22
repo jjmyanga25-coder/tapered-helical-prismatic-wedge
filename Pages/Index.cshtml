@@ -1,0 +1,60 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Tapered Helical Prismatic Wedge";
+}
+
+<h2>Tapered Helical Prismatic Wedge Volume</h2>
+
+<form method="post">
+    <label>Initial Width (w₀):</label><br />
+    <input type="number" step="any" name="Width" required /><br /><br />
+
+    <label>Depth (d):</label><br />
+    <input type="number" step="any" name="Depth" required /><br /><br />
+
+    <label>Height (h):</label><br />
+    <input type="number" step="any" name="Height" required /><br /><br />
+
+    <label>Taper Factor (t):</label><br />
+    <input type="number" step="any" name="Taper" required /><br /><br />
+
+    <label>Helical Twist Factor (ω):</label><br />
+    <input type="number" step="any" name="Twist" required /><br /><br />
+
+    <button type="submit">Calculate Volume</button>
+</form>
+
+@if (Model.Volume > 0)
+{
+    <h3>Volume: @Model.Volume.ToString("F3")</h3>
+}
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 40px;
+    background: #f5f5f5;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+input {
+    padding: 8px;
+    width: 220px;
+}
+
+button {
+    padding: 10px 20px;
+    background: teal;
+    color: white;
+    border: none;
+}
+</style>
